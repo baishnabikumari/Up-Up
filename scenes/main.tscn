@@ -1,23 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://hx8vgjxngcbs"]
+[gd_scene load_steps=2 format=3 uid="uid://hx8vgjxngcbs"]
 
-[ext_resource type="PackedScene" uid="uid://b5tb77p64luih" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://dc2mamsj5ewxq" path="res://icon.svg" id="2_0wfyh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(128, 128)
+[ext_resource type="PackedScene" uid="uid://dqq6bnxdcgpu1" path="res://scenes/levels/level_1.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(490, 208)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(494, 351)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1, 0)
-texture = ExtResource("2_0wfyh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_0wfyh")
+[node name="Levels" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(2, -3)
+scale = Vector2(1.7936242, 1.7664812)

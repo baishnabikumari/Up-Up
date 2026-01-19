@@ -245,7 +245,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(4.5000005, 8.25)
+size = Vector2(4.5000005, 8.333334)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -260,7 +260,7 @@ animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-11.25, -10.666667)
+position = Vector2(-11.25, -10.166668)
 shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="jumpSound" type="AudioStreamPlayer2D" parent="."]

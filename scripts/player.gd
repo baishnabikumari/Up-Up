@@ -1,12 +1,16 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $jumpSound
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -650.0
-
+var alive = true
 
 func _physics_process(delta: float) -> void:
+	
+	if !alive:
+		return
 	#animation
 	if velocity.x > 1 or velocity.x < -1:
 		animated_sprite_2d.animation = "run"
@@ -36,3 +40,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
+func die() -> void:
+	death_sound.play()
+	animated_sprite_2d.animation = "hit"
+	alive = false

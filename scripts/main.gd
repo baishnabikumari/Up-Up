@@ -18,5 +18,5 @@ func _setup_level() -> void:
 			
 #signal handle
 func _on_player_died(body):
-	print(body)
+	body.die()
 	print("Player died")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b5tb77p64luih"]
+[gd_scene load_steps=40 format=3 uid="uid://b5tb77p64luih"]
 
 [ext_resource type="Texture2D" uid="uid://dgf8aesa043yt" path="res://assets/images/player/Hit (32x32).png" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://ccpplsmgg1kpu" path="res://scripts/player.gd" id="1_qlg0r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vrev6uk574p" path="res://assets/images/player/Jump (32x32).png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://xp6nng5wvnah" path="res://assets/images/player/Run (32x32).png" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://drycv2gxuu1uv" path="res://assets/sounds/jump.wav" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://dmf1030n3pkum" path="res://assets/sounds/death.wav" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
 atlas = ExtResource("1_dqkch")
@@ -244,7 +245,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(4.333333, 8.25)
+size = Vector2(4.5000005, 8.25)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -255,13 +256,16 @@ script = ExtResource("1_qlg0r")
 position = Vector2(-11.333333, -10.666667)
 scale = Vector2(0.22916669, 0.3333333)
 sprite_frames = SubResource("SpriteFrames_b88wv")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-11.166667, -9.666667)
+position = Vector2(-11.25, -10.666667)
 shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="jumpSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, 0)
 stream = ExtResource("6_tuyoq")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fjrip")

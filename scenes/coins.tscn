@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://crnv242onwevq"]
+[gd_scene load_steps=14 format=3 uid="uid://crnv242onwevq"]
 
 [ext_resource type="Script" uid="uid://chwol3187tx1b" path="res://scripts/coins.gd" id="1_fxnh4"]
 [ext_resource type="Texture2D" uid="uid://clafcnxue2a3s" path="res://assets/images/Collectibles/coins.png" id="2_fxnh4"]
-[ext_resource type="Texture2D" uid="uid://dpaqqx44omiqg" path="res://assets/images/Collectibles/Collected.png" id="3_fxnh4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p3o4g"]
 atlas = ExtResource("2_fxnh4")
@@ -40,30 +39,6 @@ region = Rect2(1939, 0, 277, 312)
 atlas = ExtResource("2_fxnh4")
 region = Rect2(2216, 0, 277, 312)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1asw"]
-atlas = ExtResource("3_fxnh4")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hhy8l"]
-atlas = ExtResource("3_fxnh4")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6p0jd"]
-atlas = ExtResource("3_fxnh4")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c07ru"]
-atlas = ExtResource("3_fxnh4")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u3akd"]
-atlas = ExtResource("3_fxnh4")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oestc"]
-atlas = ExtResource("3_fxnh4")
-region = Rect2(160, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_6wlsl"]
 animations = [{
 "frames": [{
@@ -97,33 +72,10 @@ animations = [{
 "loop": true,
 "name": &"Coins",
 "speed": 13.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s1asw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hhy8l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6p0jd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c07ru")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u3akd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oestc")
-}],
-"loop": true,
-"name": &"Collected",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcd1j"]
-radius = 2.027588
+radius = 2.0
 
 [node name="coins" type="Area2D"]
 texture_filter = 1
@@ -131,14 +83,14 @@ scale = Vector2(3, 3)
 script = ExtResource("1_fxnh4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(61.833336, 80.833336)
-scale = Vector2(0.022864036, 0.020299155)
+position = Vector2(5.833334, 8.666668)
+scale = Vector2(0.020457275, 0.021367513)
 sprite_frames = SubResource("SpriteFrames_6wlsl")
 animation = &"Coins"
 autoplay = "Coins"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(62, 81.666664)
+position = Vector2(6, 9.333334)
 shape = SubResource("CircleShape2D_bcd1j")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

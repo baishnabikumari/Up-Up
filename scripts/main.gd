@@ -1,4 +1,5 @@
 extends Node2D
+@onready var score_label: Label = $HUD/ScorePanel/ScoreLabel
 
 var score: int = 0
 
@@ -25,4 +26,4 @@ func _on_player_died(body):
 #score
 func increase_score() -> void:
 	score += 1
-	print("Score", score)
+	score_label.text = "SCORE: %s" % score
